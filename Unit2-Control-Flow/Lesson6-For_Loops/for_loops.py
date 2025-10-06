@@ -56,13 +56,15 @@ total_chars = len(username)
 for char in username:
     if 'A' <= char <= 'Z':
         has_uppercase = True
-    if '0' <= char <= '0':
+    if '0' <= char <= '9':
         has_number = True
         
 print(f"Username: {username}")
 print(f"Total characters: {total_chars}")
 print(f"Has number: {has_number}")
 print(f"Has uppercase: {has_uppercase}")
+
+
 
 
 # PART 3: QUICK PRACTICE - Counting 'e'
