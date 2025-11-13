@@ -95,20 +95,48 @@ def is_even(number):
     """Return True if number is even, False if odd."""
     # Method 1: Direct return (best!)
     return number % 2 == 0
+   
+    # Method 2: If statement (works but unnecessary)
+    # if number % 2 == 0:
+    #     return True
+    # else:
+    #     return False
+
+
+print("=== Practice 4 ===")
+print(f"Is 4 even? {is_even(4)}")  # True
+print(f"Is 7 even? {is_even(7)}")  # False
+print()
 
 
 
 # ============================================================================
 # Practice 5: Calculate Tip
 # ============================================================================
+def calculate_tip(bill_amount, tip_percentage):
+    """Calculate and return tip amount."""
+    return bill_amount * tip_percentage
 
+
+print("=== Practice 5 ===")
+tip = calculate_tip(50, 0.20)
+print(f"Tip on $50 at 20%: ${tip}")  # 10.0
+print()
 
 
 
 # ============================================================================
 # Challenge 1: Calculate Average
 # ============================================================================
+def calculate_average(score1, score2, score3):
+    """Return the average of three scores."""
+    return (score1 + score2 + score3) / 3
 
+
+
+print("=== Challenge 1 ===")
+print(f"Average of 85, 90, 88: {calculate_average(85, 90, 88)}")  # 87.67
+print()
 
 
 
@@ -117,3 +145,23 @@ def is_even(number):
 # Challenge 2: Letter Grade
 # ============================================================================
 
+def get_letter_grade(percentage):
+    """Return letter grade based on percentage."""
+    # Start with highest grade first
+    if percentage >= 90:
+        return "A"
+    elif percentage >= 80:
+        return "B"
+    elif percentage >= 70:
+        return "C"
+    elif percentage >= 60:
+        return "D"
+    else:
+        return "F"
+
+
+
+print("=== Challenge 2 ===")
+print(f"95% = {get_letter_grade(95)}")  # A
+print(f"83% = {get_letter_grade(83)}")  # B
+print(f"55% = {get_letter_grade(55)}")  # F
