@@ -20,8 +20,16 @@ def convert_to_stars(score):
     # TODO: Write your code here
     # Use if/elif/else to check the score ranges
     # Return the appropriate star rating (1, 2, 3, 4, or 5)
-    
-    pass  # Remove this line when you add your code
+    if score <= 20:
+        return 1
+    elif score <= 40:
+        return 2
+    elif score <= 60:
+        return 3
+    elif score <= 80:
+        return 4
+    else:
+        return 5
 
 
 # Tests
