@@ -163,15 +163,18 @@ print("=== CUSTOMER LOOKUP ===")
 
 while True:
     search = input("\nEnter company name (or 'quit'): ")
-    
     # TODO: Check if user typed 'quit' - if so, print "Goodbye!" and break
-    
+    if search.lower() == "quit":
+        print("Goodbye!")
+        break
     # TODO: Call find_customer() to search
-    
+    result = find_customer(customers, search)
     # TODO: If found, call display_customer()
+    if result:
+        display_customer(result)
     # TODO: If not found, print "Customer 'X' not found!"
+    else:
+        print(f"Customer '{search}' not found!")
     
-    pass  # Remove this when you add your code
-
 
 
