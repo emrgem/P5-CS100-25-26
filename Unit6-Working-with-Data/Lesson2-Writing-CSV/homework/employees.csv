@@ -1,0 +1,26 @@
+employee_id,name,department,salary,hire_date
+E001,Jennifer Martinez,Sales,65000,2019-03-15
+E002,Michael Chen,Marketing,70000,2018-07-22
+E003,Sarah Johnson,IT,78000,2020-01-10
+E004,David Kim,Finance,72000,2017-11-05
+E005,Emily Rodriguez,HR,68000,2019-09-18
+E006,James Wilson,Sales,62000,2021-02-14
+E007,Maria Garcia,Operations,67000,2018-05-30
+E008,Robert Taylor,IT,82000,2016-08-12
+E009,Lisa Anderson,Marketing,73000,2019-12-01
+E010,Christopher Lee,Finance,75000,2020-04-25
+E011,Jessica Brown,Sales,64000,2021-06-08
+E012,Daniel White,IT,79000,2017-10-20
+E013,Amanda Harris,HR,69000,2018-03-14
+E014,Matthew Clark,Operations,71000,2019-07-03
+E015,Ashley Lewis,Marketing,68000,2020-09-17
+E016,Joshua Walker,Finance,76000,2018-11-28
+E017,Stephanie Hall,Sales,66000,2021-01-05
+E018,Andrew Allen,IT,80000,2017-04-19
+E019,Michelle Young,HR,70000,2019-08-22
+E020,Ryan King,Operations,72000,2020-02-11
+E021,Nicole Wright,Marketing,71000,2018-06-15
+E022,Brandon Lopez,Sales,63000,2021-03-30
+E023,Rachel Hill,Finance,77000,2017-09-08
+E024,Kevin Scott,IT,81000,2019-05-12
+E025,Lauren Green,Operations,69000,2020-10-25
