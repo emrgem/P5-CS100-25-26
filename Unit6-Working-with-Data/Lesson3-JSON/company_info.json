@@ -1,0 +1,15 @@
+{
+    "name": "TechCorp",
+    "founded": 2018,
+    "location": {
+        "city": "San Francisco",
+        "state": "CA",
+        "zip": "94105"
+    },
+    "departments": [
+        "Sales",
+        "IT",
+        "Marketing",
+        "Finance"
+    ]
+}
