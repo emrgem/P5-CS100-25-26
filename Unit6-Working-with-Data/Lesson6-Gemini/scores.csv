@@ -1,0 +1,7 @@
+date,question,choice_a,choice_b,choice_c,choice_d,user_answer,correct_answer,result,score,total,percent
+2026-03-06 11:42,Which Python data structure is an unordered collection of items where each item is a key-value pair?,List,Tuple,Dictionary,Set,A,C,Wrong,0,3,0%
+2026-03-06 11:42,What keyword is used to define a function in Python?,func,define,def,function,B,C,Wrong,0,3,0%
+2026-03-06 11:42,Which of the following Python data structures is immutable?,List,Dictionary,Set,Tuple,C,D,Wrong,0,3,0%
+2026-03-06 11:55,Which of the following best describes a common property of a list data structure?,It must contain elements of the same data type.,Elements are typically stored in a specific order.,Its size cannot be changed after creation.,It only allows unique elements to be stored.,B,B,Correct,2,3,67%
+2026-03-06 11:55,What is a common operation associated with managing items within a list?,Generating random numbers,Appending a new element,Performing complex mathematical calculations,Creating graphical user interfaces,B,B,Correct,2,3,67%
+2026-03-06 11:55,"In the context of programming, what does it mean for a list to be ""mutable""?",Its elements can be encrypted.,It can be easily converted into a database.,Its contents can be modified after creation.,It can only store numbers.,B,C,Wrong,2,3,67%
