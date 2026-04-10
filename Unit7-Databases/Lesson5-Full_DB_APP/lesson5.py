@@ -24,13 +24,6 @@ def init_db():
 
 
 # ============================================================
-# display_movies() — Format and print a list of movie tuples
-# Reusable helper for view_all and search
-# ============================================================
-
-
-
-# ============================================================
 # add_movie() — Get input from user, INSERT into database
 # ============================================================
 def add_movie():
@@ -53,25 +46,58 @@ def add_movie():
 
 
 # ============================================================
+# display_movies() — Format and print a list of movie tuples
+# Reusable helper for view_all and search
+# ============================================================
+def display_movies(movies):
+    """Display a list of movie tuples in a nice format"""
+    if not movies:
+        print(" No movies found!")
+        return #Early termination
+    for movie in movies:
+        print(f"[{movie[0]}] {movie[1]} ({movie[2]})-{movie[3]}/10" + f" {movie[4]}" if movie[4] else "")
+        # if movie[4]:
+        #     print(f"    {movie[4]}")
+    print(f"({len(movies)}) movies.")
+ 
+# ============================================================
 # view_all_movies() — SELECT all, display formatted
 # ============================================================
-
+def view_all_movies():
+    """Makes a connection to the DB and shows all movies sorted by rating"""
+    with sqlite3.connect(DB_FILE) as conn:
+        cursor = conn.cursor()
+        cursor.execute("""
+                       SELECT id, title, genre, rating, review FROM movies
+                       ORDER BY rating DESC""")
+        movies = cursor.fetchall()
+    display_movies(movies)
 
 
 # ============================================================
 # search_movies() — Search by title keyword with LIKE
 # ============================================================
+def search_movies():
+    """Search movies by title keyword  """
+    keyword = input("Search Title: ")
+    with sqlite3.connect(DB_FILE) as conn:
+        cursor = conn.cursor()
+        cursor.execute("""
+                       SELECT id, title, genre, rating, review FROM movies
+                       WHERE title LIKE ?
+                       ORDER BY rating DESC""", (f"%{keyword}%",))
+        movies = cursor.fetchall()
+    print(f"\n 🔍 Search Results:")
+    display_movies(movies)
+    
+# ============================================================
+# update_rating() — Show all(view all movies), pick an ID to update, UPDATE rating value
+# ============================================================
 
 
 
 # ============================================================
-# update_rating() — Show all, pick an ID, UPDATE rating
-# ============================================================
-
-
-
-# ============================================================
-# delete_movie() — Show all, pick an ID, DELETE row
+# delete_movie() — Show all(view all movies), pick an ID to, DELETE row
 # ============================================================
 
 
@@ -79,7 +105,30 @@ def add_movie():
 # ============================================================
 # view_stats() — COUNT, AVG, GROUP BY genre
 # ============================================================
+def view_stats():
+    """Show database statistics."""
+    with sqlite3.connect(DB_FILE) as conn:
+        cursor = conn.cursor()
+        cursor.execute("SELECT COUNT(*) FROM movies")
+        total = cursor.fetchone()[0]
+        
+        if total == 0:
+            print("\n📊 No movies in database yet.")
+            return
 
+        cursor.execute("SELECT ROUND(AVG(rating), 1) FROM movies")
+        avg = cursor.fetchone()[0]
+
+        cursor.execute("""
+            SELECT genre, COUNT(*), ROUND(AVG(rating), 1)
+            FROM movies GROUP BY genre ORDER BY COUNT(*) DESC
+        """)
+        genres = cursor.fetchall()
+
+    print(f"\n📊 Stats: {total} movies, avg rating: {avg}/10")
+    print("  Genre breakdown:")
+    for g in genres:
+        print(f"    {g[0]}: {g[1]} movies (avg {g[2]}/10)")
 
 
 # ============================================================
@@ -105,6 +154,10 @@ def main():
             break
         elif choice == "1":
             add_movie()
+        elif choice == "2":
+            view_all_movies()
+        elif choice == "3":
+            search_movies()
 # ============================================================
 # Run the app
 # ============================================================
