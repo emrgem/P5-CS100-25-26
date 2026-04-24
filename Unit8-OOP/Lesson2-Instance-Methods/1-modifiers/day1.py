@@ -16,15 +16,12 @@ class Profile:
         self.followers = 0
         self.posts = []
         self.following = []
-
     # ---------------------------
     # TODO 1: Write add_post(self, text)
     # It should append `text` to self.posts
     # ---------------------------
-
     def add_post(self, text):
         self.posts.append(text)
-
 
     # ---------------------------
     # TODO 2: Write gain_follower(self)
@@ -33,14 +30,13 @@ class Profile:
     def gain_follower(self):
         self.followers += 1
     
-
-
     # ---------------------------
     # TODO 3: Write follow(self, other_username)
     # It should append other_username to self.following
     # ---------------------------
-
-    # YOUR CODE HERE
+    def follow(self, other_username):
+        self.following.append(other_username)
+    
 
 
 # ==================================
@@ -53,3 +49,16 @@ maria.add_post("Hello BT!")
 maria.add_post("Learning OOP!")
 
 print(f"Posts: {maria.posts}")
+
+# Test gain_follower() method
+print(f"Testing gain_follower() method")
+maria.gain_follower()
+maria.gain_follower()
+maria.gain_follower()
+print(maria.followers)
+
+# Testing follow method
+print(f"Testing follow(username) method")
+maria.follow("Justin")
+maria.follow("Sydney")
+print(f"Following: {maria.following}")
