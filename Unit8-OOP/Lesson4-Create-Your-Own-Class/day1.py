@@ -53,6 +53,8 @@ class Playlist:
     # STEP 5c: song_count  (getter)
     # Return the number of songs (use len())
     # -------------------------------------------------------------------------
+    def song_count(self):
+        return len(self.songs)
 
 
     # -------------------------------------------------------------------------
@@ -60,6 +62,11 @@ class Playlist:
     # Loop through self.songs, sum up the "duration" of each
     # Return the total
     # -------------------------------------------------------------------------
+    def total_duration(self):
+      total = 0
+      for song in self.songs:
+          total += song["duration"]
+      return total
 
 
 # =============================================================================
@@ -87,10 +94,19 @@ if __name__ == "__main__":
     print(f"Remove 'Africa': {road_trip.remove_song('Africa')}")
     print(f"Remove 'Nonexistent': {road_trip.remove_song('Nonexistent')}")
     print(f"Songs now: {road_trip.songs}")
-
+    print()
     
     # Test song_count
+    print(f"Song count: {road_trip.song_count()}")
+    print()
 
     # Test total_duration
+    print(f"Total duration: {road_trip.total_duration()} seconds")
+    total = road_trip.total_duration()
+    minutes = total // 60
+    seconds = total % 60
+    print(f"That's {minutes}:{seconds:02d}")
+    print()
+
 
 
